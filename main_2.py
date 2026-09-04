@@ -2,6 +2,7 @@ from fastapi import FastAPI
 import pickle
 import pandas as pd
 from data_model_1 import Water
+import os
 
 
 app = FastAPI(
@@ -10,7 +11,11 @@ app = FastAPI(
 )
 
 # Load the trained model
-with open(r"model.pkl", "rb") as f:
+
+
+model_path = os.path.join(os.path.dirname(__file__), "model.pkl")
+
+with open(model_path, "rb") as f:
     model = pickle.load(f)
 
 
