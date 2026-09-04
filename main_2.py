@@ -10,7 +10,7 @@ app = FastAPI(
 )
 
 # Load the trained model
-with open(r"C:\Users\shravan\Music\ML Pipeline\model.pkl", "rb") as f:
+with open(r"model.pkl", "rb") as f:
     model = pickle.load(f)
 
 
